@@ -21,7 +21,7 @@ class RacersController < ApplicationController
   end 
 
   def destroy 
-    @racer = Racer.find(params[id])
+    @racer = Racer.find(params[:id])
     @racer.destroy
   end 
 

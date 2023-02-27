@@ -15,11 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_181800) do
     t.string "name"
     t.datetime "born_at"
     t.string "image_url"
-    t.integer "race_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["race_id"], name: "index_racers_on_race_id"
   end
 
-  add_foreign_key "racers", "races"
 end

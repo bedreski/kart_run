@@ -1,9 +1,6 @@
 # require 'addressable/uri'
 
 class Racer < ApplicationRecord
-  has_many :placements
-  has_many :races, through :placements
-
   validates :name, presence: true
   validates :born_at, presence: true
   validate :born_at do 
