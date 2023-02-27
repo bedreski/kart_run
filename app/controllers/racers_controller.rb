@@ -5,7 +5,9 @@ class RacersController < ApplicationController
   end 
 
   def create 
-    
+    @racer = Racer.new(racer_params)
+    return redirect_to @racer if @racer.save
+    render :index, racer: :unprocessable_entity
   end
 
   def show
@@ -13,6 +15,9 @@ class RacersController < ApplicationController
   end 
 
   def update 
+    @racer = Racer.find(params[:id])
+    return redirect_to @racer if @racer.update(racer_params)
+    render :edit, racer: :unprocessable_entity
   end 
 
   def destroy 
